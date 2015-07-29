@@ -6613,6 +6613,12 @@ blockquote {
   display: inline-block;
   padding: 50px 0 10px;
 }
+#main-footer .legales p {
+  padding: 20px 0;
+}
+#main-footer .legales p a {
+  color: #f4a435;
+}
 #main-footer .textwidget a {
   color: #f4a435;
   text-decoration: none;
