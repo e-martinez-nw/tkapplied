@@ -1,0 +1,934 @@
+/******************************************************************
+Theme Name: FTScratch-Nw (NOMBRE DEL CLIENTE)
+Theme URI: http://www.nuevaweb.com.mx
+Description: Tema diseñado y desarrollado exclusivamente para "(NOMBRE DEL CLIENTE)" por NuevaWeb 2014.
+Author: <a href="http://www.nuevaweb.com.mx">the NuevaWeb team</a>
+Author URI: http://www.nuevaweb.com.mx
+Version: 1.0
+Tags: flexible-width, translation-ready, microformats, rtl-language-support, custom-template, nuevaweb
+
+License: -
+License URI: -
+
+Happy Developing!
+
+******************************************************************/
+
+//	Import all your stuff here
+// ------------------------------------
+
+@import "wordpress.less";
+@import "../lib/font-awesome-4.3.0/less/font-awesome.less"; // Font-Awesome Docs: http://fontawesome.io/icons/ 
+
+// Bootstrap resources. 
+// Default: There are only activated the main .less archives to make it work.
+@import "bootstrap.less"; // Bootstrap Docs: http://getbootstrap.com/
+
+// Bootstrap Disabling responsiveness Docs: http://getbootstrap.com/getting-started/#disable-responsive
+// .container{ width: 970px !important; } .container-fluid{ min-width: 970px !important; }
+
+//	Fix any path's of your libs Here
+// ------------------------------------
+
+// @fa-font-path:        "../lib/font-awesome-4.3.0/fonts/"; // Font-Awesome Icon Path Fix
+@icon-font-path:          "../lib/bootstrap-3.3.1/fonts/"; // Bootstrap Icon Path Fix
+
+//	My Fonts Here
+// ------------------------------------
+// Learn how to use @font-face - Docs: http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/
+
+// @font-face{
+	// font-family: ; // 'family name' 
+	// font-style: ; // normal, italic, oblique 
+	// font-weight: ; // 100 (This is light), 400 (This is normal), 900 (This is bold). 
+	// src: url("fonts/");
+// }
+
+// @primaryFontFamily: @CustomFontFamilyFontFamily;
+// @secondaryFontFamily: @SecondCustomFontFamily;
+//
+// @CustomFontFamilyFontFamily: "Your-Sanserif Font Family", Arial, sans-serif;
+// @SecondCustomFontFamily: Georgia, "Your-Serif FontFamily", Times, serif;
+
+
+@import "Open_Sans.less";
+@primaryFontFamily: @OpenSans;
+
+@OpenSans: "OpenSans", Arial, sans-serif;
+
+
+//	Variables
+// ------------------------------------
+
+@black:						#000;
+@white:						#fff;
+@orange:					#f4a435;
+@orangedark:				#b16b0a;
+@gray:						#919191;
+@darkgray:					#545454;
+@text:						#333;
+
+// ====================================
+//	General Selectors
+// ====================================
+
+body{ font-size: 16px; 
+	color: @text; 
+	font-family: @primaryFontFamily; 
+	font-weight: 300; 
+	background-color: @text;
+}
+
+h1, h2, h3, h4, h5, h6{ font-family: @primaryFontFamily; font-weight: 300; color: @orange;}
+h1 {font-size: 28px;}
+h2 {font-size: 24px;}
+h3 {font-size: 22px;}
+h4 {font-size: 22px;}
+h5 {font-size: 20px;}
+h6 {font-size: 18px;}
+
+img{ vertical-align: top; } // Remove 2 pixels under the image
+
+strong {font-weight: 600;}
+
+ol, ul, dl{}
+
+li{}
+
+p{}
+
+a{}
+
+blockquote{
+	border: none;
+	background-color: @orange;
+	color: @white;
+	padding: 10px 20px;
+	margin: 0 0 20px 60px;
+}
+
+.wp-caption-text {
+	font-size: 14px !important;
+	color: @orange;
+}
+
+// General Clases
+// ====================================
+
+.none{ display: none; }
+.relative{ position: relative; }
+.absolute{ position: absolute; }
+.fixed{ position: fixed; }
+
+.t-left{ text-align: left; }
+.t-right{ text-align: right; }
+.t-center{ text-align: center; }
+.transition { transition: .2s;}
+.white {background-color: @white;}
+
+
+// Wordpress Gallery
+// ====================================
+
+.gallery-item{
+	padding: 0 10px;
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+.wp-caption{
+
+	a{ display: block; }
+
+	img{ }
+}
+
+.wp-caption p.wp-caption-text, .wp-caption-text{
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1em;
+	padding: 15px 0 10px;
+}
+
+.gallery-columns-3{
+	.gallery-item{ width: 33.3% !important; }
+}
+
+
+// Header // Your Main Header Css goes here.
+// ====================================
+
+#main-header{
+	border-bottom: 8px solid @gray;
+	.white;
+
+	.navbar {margin-bottom: 0;}
+
+	.main-search {
+		height: 33px;
+		border: 1px solid @gray;
+
+		.search-btn {
+			color: @white;
+			font-size: 22px;
+
+			#searchsubmit {
+				background-color: @orange;
+				border: none;
+				width: 40px;
+				position: absolute;
+				padding: 0;
+				cursor: pointer;
+			}//#searchsubmit
+
+			i.fa.fa-search {margin-left: 10px; cursor: pointer;}
+		}//.search-btn
+
+		input[type="text"] {
+			width: 50%; 
+			border: none;
+			padding: 0 20px;
+			font-style: italic;
+		}
+	}//.main-search
+
+	.navbar-brand {
+		padding: 0;
+
+		.main-logo {padding: 15px; display: block;}
+	}
+}//#main-header
+
+#main-nav ul li {
+	z-index: 10;
+	a {
+		padding: 60px 20px 70px;
+		color: @text;
+		.transition;
+	}//a
+
+	.sub-menu {
+		a {
+			background-color: @darkgray;
+			color: @white;
+			
+			&:hover {background-color: @gray;}
+		}//a
+	}//.sub-menu
+
+	&:hover {
+		background-color: @darkgray;
+		.transition;
+		a {	color: @white; }
+	}
+}//#main-nav ul li
+
+@import "dropdown_menu.less"; // Use this Dropdown Menu to save time
+
+
+// Bootstrap collapse classese
+.navbar-toggle{
+	.icon-bar{ background-color: @black; }
+}
+.navbar-brand{ height: auto; }
+
+// Carousel
+// ====================================
+
+.carousel-slide{
+	height: 460px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.carousel-control{ cursor: pointer; }
+
+
+
+// Somos
+// ====================================
+#somos {
+	background-color: @orange;
+	background-image: url('../img/backgrounds/index/bg-banner.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: @white;
+	text-align: center;
+	padding: 80px;
+
+	h2 {
+		padding: 0 110px 50px;
+		font-weight: 300;
+		color: @white;
+	}
+	p {
+		color: @text;
+		font-size: 24px;
+		padding: 0 30px;
+	}
+}//#somos
+
+
+
+// Servicios
+// ====================================
+#servicios {
+	background: @darkgray;
+	padding: 50px 0;
+	
+	.widget-custom-link {
+		text-align: center;
+
+		a {
+			color: @white;
+			display: inline-block;
+			font-size: 22px;
+			
+			.widget-custom-link-image {
+				width: 130px;
+				height: 130px;
+				margin: 0 auto;
+				border-radius: 50%;
+				background-color: @orange;
+
+				img {
+					width: 100%;
+					height: 100%;
+					background-image: url('../img/assets/custom-icons/icons-areas-negocio.png');
+				}
+			}//.widget-custom-link-image
+
+			.widget-custom-link-title {padding: 30px 0 0;}
+
+			&:hover {
+				text-decoration: none;
+				color: @orange;
+				.widget-custom-link-image {background: darken(@orange, 10%);}
+				.transition;
+			}//&:hover
+		}//a
+	}//.widget-custom-link
+
+	.llave img { 
+		background-position: 341px -20px;
+		.transition;
+		&:hover {background-position: 341px -190px;}
+	}
+	.diagramas img { 
+		background-position: 152px -20px;
+		.transition;
+		&:hover {background-position: 152px -190px;}
+	}
+}//#servicios
+
+
+
+// About-us
+// ====================================
+#about-us {
+	padding: 50px;
+	.white;
+
+	h2 {
+		text-align: center;
+		color: @orange;
+		padding-bottom: 50px;
+	}//h2
+
+	p {
+		font-size: 22px;
+		text-align: justify;
+	}
+}//#about-us
+
+
+// Call-to-Action
+// ====================================
+#cta {
+	background-image: url('../img/backgrounds/index/bg-call-to-action.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	padding: 50px;
+	.white;
+
+	p {
+		font-size: 22px;
+		color: @white;
+		padding: 20px;
+	}
+
+	a {
+		text-transform: uppercase;
+		padding: 15px 85px 10px;
+		background-color: @orange;
+		display: inline-block;
+		border: 4px solid @orange;
+		text-decoration: none;
+		.transition;
+
+		p {
+			color: @orangedark;
+			font-size: 24px;
+			padding: 0;
+			font-weight: 600;
+		}
+
+		&:hover {
+			border: 4px solid @orangedark;
+			.transition;
+		}
+	}//a
+}//#cta
+
+
+
+// Áreas de Negocio
+// ====================================
+#areas-negocio {
+	text-align: center;
+	padding: 50px;
+	.white;
+
+	.pleca { 
+		border-bottom: 1px solid lighten(@gray, 20%);
+
+		.widget {
+			position: relative;
+
+			&:before {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background-color: lighten(@gray, 20%);
+				position: absolute;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+			}//&:before
+		}//.widget
+	}//.pleca
+	.textwidget {
+		display: inline-block;
+		position: relative;
+
+		&::before {
+			content: " ";
+			border-left: 30px solid white;
+			border-top: 31px solid transparent;
+			border-bottom: 37px solid transparent;
+			width: 0;
+			height: 0;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 10;
+		}//&:before
+		&::after {
+			content: " ";
+			border-right: 30px solid white;
+			border-top: 31px solid transparent;
+			border-bottom: 37px solid transparent;
+			width: 0;
+			height: 0;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 10;
+		}//&:after
+	}//.textwidget
+	h2 {
+		display: inline-block;
+		background-color: @darkgray;
+		padding: 10px 60px;
+		color: @white;
+		position: relative;
+
+		&::before {content: "• "}
+		&::after {content: " •"}
+
+	}//h2
+	.widget-custom-link {
+		padding: 50px 0;
+
+		a {
+			color: @orange;
+			text-align: center;
+			font-size: 24px;
+			font-weight: 600;
+
+			.widget-custom-link-image {
+				img {
+					width: 200px;
+					background-image: url('../img/assets/custom-icons/icons-areas-negocio.png');
+					background-color: @orange;
+					border-radius: 50%;
+					.transition;
+				}//img
+			}//.widget-custom-link-image
+
+			&:hover {
+				text-decoration: none;
+
+				img {
+					background-color: darken(@orange, 10%); 
+					.transition;
+				}
+			}
+		}//a
+	}//.widget-custom-link
+
+	.automatizacion img{ 
+		background-position: -17px 17px;
+		&:hover {background-position: -17px 187px;}
+	}
+	.instalaciones img {
+		background-position: -242px 17px;
+		&:hover {background-position: -242px 187px;}
+	}
+	.redes img {
+		background-position: -468px 17px;
+		&:hover {background-position: -468px 187px;}
+	}
+	.mecanicas img {
+		background-position: -690px 15px;
+		&:hover {background-position: -690px 187px;}
+	}
+}//#areas-negocio
+
+
+// Certificaciones
+// ====================================
+#certificaciones {
+	text-align: center;
+	.white;
+
+	h4 {font-size: 22px; color: @text;}
+	img {
+		max-width: 100%;
+		max-height: 160px;
+		vertical-align: middle;
+	}
+
+	.widget-custom-link {
+		padding: 0 20px;
+		height: 250px;
+		line-height: 250px;
+
+		a {
+			display: inline-block;
+			vertical-align: middle;
+
+			.widget-custom-link-image {
+				line-height: 200px;
+			}
+		}
+	}
+}
+
+
+// Footer // Your Main Footer Css goes here.
+// ====================================
+
+#main-footer{ 
+	background-color: @darkgray;
+
+	li {
+		list-style: none;
+		float: left;
+		padding: 10px 30px;
+		max-width: 150px;
+		text-align: center;
+
+		a {
+			color: @white;
+			font-size: 18px;
+			.transition;
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+				color: @orange;
+			}//&:hover
+		}//a
+	}//li
+
+
+	.legales {
+		text-align: center; 
+		color: @white;
+		background-color: @text;
+		padding-bottom: 40px;
+
+		.logo {
+			.widget-custom-link-image img { width: 60px; }
+			a {display: inline-block; padding: 50px 0 10px;}
+		}//.logo
+	}//.legales
+	
+	.textwidget a {
+		color: @orange; 
+		text-decoration: none;
+
+		&:hover {text-decoration: underline;}
+	}
+
+	.redes {
+		display: inline-block;
+
+		.widget-custom-link-image img { 
+			width: 32px;
+			background-image: url("../img/assets//custom-icons/icons-redes-sociales.png");
+		}//.widget-custom-link-image img
+	}//.redes
+
+	.facebook img:hover {background-position: 0 -34px; .transition;}
+	.twitter img {
+		background-position: -35px 0;
+		.transition;
+
+		&:hover {background-position: -35px -34px;}
+	}//.twitter img
+	.linkedin img {
+		background-position: -70px 0;
+		.transition;
+
+		&:hover {background-position: -70px -34px;}
+	}//.linkedin img
+}//#main-footer
+
+
+
+//	Noticias
+// ====================================
+#noticias {
+	.white;
+
+	.main-title {
+		background-color: @orange;
+		background-image: url('../img/backgrounds/index/bg-banner.png');
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+		padding: 40px 0;
+		
+		h1 {color: @white;}
+	}//.main-title
+
+	.posts {
+		padding: 50px 0;
+
+		article {
+			border: 1px solid lighten(@text, 30%);
+			height: 320px;
+			overflow: hidden;
+			margin: 15px 0;
+			position: relative;
+
+			h3 {
+				padding: 0 20px;
+
+				a {color: @text; text-decoration: none;}
+			}//h3
+
+			p {
+				padding: 20px;
+				text-align: justify;
+
+				a{display: none;}
+			}//p
+
+			.feature-img {
+				height: 120px;
+				overflow: hidden;
+			}//.feature-img
+
+			.more {
+				position: absolute;
+				bottom: 0;
+				padding: 10px 20px;
+				background-color: @white;
+				width: 100%;
+
+				a {
+					color: @orange;font-size: 16px;
+				}//a
+			}//.more
+		}//article
+		nav.pagination {
+			ul {
+				text-align: center;
+
+				li {
+					list-style: none;
+					color: @orange;
+					display: inline-block;
+					font-size: 20px;
+
+					a {color: @orange;}
+				}
+			}
+		}
+	}//.posts
+}//#noticias
+
+
+//	Page
+// ====================================
+#page {
+	.white; 
+
+	header {
+		background-color: @orange;
+		background-image: url('../img/backgrounds/index/bg-banner.png');
+		background-size: cover;
+		background-position: center;
+		text-align: center;
+		padding: 40px 0;
+		
+		h1 {color: @white;}
+	}
+
+	.content {padding: 50px 0;}
+}
+
+
+//	Áreas de negocio
+// ====================================
+.areas-negocio {
+
+	.description {
+		color: @white;
+		padding: 110px 0;
+		text-align: justify;
+	}
+	.textwidget {
+		display: none;
+	}//.textwidget
+
+	.widget-custom-link {
+		padding: 50px 0;
+
+		a {
+			color: @orange;
+			text-align: center;
+			font-size: 24px;
+			font-weight: 600;
+
+			.widget-custom-link-image {
+				img {
+					width: 200px;
+					background-image: url('../img/assets/custom-icons/icons-areas-negocio.png');
+					background-color: @orange;
+					border-radius: 50%;
+					.transition;
+				}//img
+			}//.widget-custom-link-image
+
+			&:hover {
+				text-decoration: none;
+
+				img {
+					background-color: darken(@orange, 10%); 
+					.transition;
+				}//img
+			}//&:hover
+		}//a
+
+		.widget-custom-link-title {
+			min-height: 70px;
+		}//.widget-custom-link-title
+
+		.widget-custom-link-info p {
+			color: @text;
+			font-size: 16px;
+			font-weight: 300;
+			text-align: justify;
+			padding: 20px;
+		}//.widget-custom-link-info p
+	}//.widget-custom-link
+
+	.automatizacion img { 
+		background-position: -17px 17px;
+		&:hover {background-position: -17px 187px;}
+	}//.automatizacion img
+
+	.instalaciones img {
+		background-position: -242px 17px;
+		&:hover {background-position: -242px 187px;}
+	}//.instalaciones img
+
+	.redes img {
+		background-position: -468px 17px;
+		&:hover {background-position: -468px 187px;}
+	}//.redes img 
+
+	.mecanicas img {
+		background-position: -690px 15px;
+		&:hover {background-position: -690px 187px;}
+	}//.mecanicas img
+}//.areas-negocio
+
+
+//	Contacto
+// ====================================
+.contacto {
+	.icons {padding: 50px 0;}
+	.widget-custom-link-image {
+		text-align: center;
+
+		img {
+			background-image: url('../img/assets/custom-icons/icons-contacto.png');
+			width: 67px;
+		}//img
+	}//.widget-custom-link-image
+
+	.correo img {background-position: 67px 0;}
+	.telefono img {background-position: 134px 0;}
+
+	.widget-custom-link-info {
+		font-size: 22px;
+		text-align: center;
+		padding-top: 20px;
+	}
+	.description {
+		background-position: top !important; 
+
+		h6 {padding: 30px 0; }
+		p {color: @white;}
+		input, textarea {color: @text;}
+		input[type="submit"] {
+			padding: 10px 30px;
+			background-color: @orange;
+			color: @white;
+			border: none;
+			font-weight: 600;
+			margin-left: 110px;
+		}
+	}
+}//#contacto
+
+
+//	Components
+// ====================================
+
+#searchform{
+
+	// Input Placeholder color
+	::-webkit-input-placeholder{ color: darken(@white, 30%);}
+	:-moz-placeholder{ color: darken(@white, 30%);}
+	::-moz-placeholder{ color: darken(@white, 30%);}
+	:-ms-input-placeholder { color: darken(@white, 30%);}
+}
+
+
+// Media Queries
+// ====================================
+#error404 {
+	.white;
+	padding: 50px 0;
+
+	.search-btn {
+		height: 33px;
+
+		.search-btn {
+			color: @white;
+			font-size: 22px;
+
+			#searchsubmit {
+				background-color: @orange;
+				border: none;
+				width: 40px;
+				position: absolute;
+				padding: 0;
+				cursor: pointer;
+				margin-top: 2px;
+			}//#searchsubmit
+
+			i.fa.fa-search {margin-left: 10px; cursor: pointer;}
+		}//.search-btn
+
+		input[type="text"] {
+			width: 40%; 
+			padding: 4px 20px;
+			font-style: italic;
+			border: 1px solid lighten(@text, 10%);
+		}
+	}//.main-search
+
+	img {width: 100%;padding: 50px 0;}
+}
+
+
+// Media Queries
+// ====================================
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { }// Large devices
+
+/* Midum devices only (desktops, from 992px to 1200px) */
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { }// Midum devices only
+
+/* Medium devices and up (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { }// Midum devices and up
+
+/* Small devices only (tablets, from 768px to 992px) */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	#somos { 
+		padding: 50px 0;
+		h2 {padding: 0;}
+	}
+ }// Small devices only
+
+/* Small devices and up (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { }// Small devices and up
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: @screen-xs-max) { 
+	.admin-bar-fix{ margin-top: 0px; }
+	.header-fix-size{ display: none; }
+
+	.navbar-header{ cursor: pointer; }
+	.navbar-brand{
+		//margin:0; color: @white; font-weight: 400;
+	}
+
+	#main-nav{
+		ul{ width: 100%; padding: 0;
+			li{
+				width: 100%;
+				a{
+					display: block;
+					&:hover{ }
+				}
+
+				>ul{
+					min-width: 100%;
+					position: relative;
+					display: block;
+				}
+			}// li
+		}// ul
+	}// #main-nav
+
+	.carousel-slide{ height: 180px; }
+
+	#somos { 
+		padding: 50px 0;
+		h2 {padding: 0;}
+	}
+
+	#about-us {padding: 50px 0;}
+
+	#areas-negocio { 
+		padding: 0; 
+		h2 {padding: 10px 30px;}
+	}
+}
