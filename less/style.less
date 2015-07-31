@@ -203,30 +203,44 @@ blockquote{
 	}
 }//#main-header
 
-#main-nav ul li {
-	z-index: 10;
-	a {
-		padding: 60px 20px 70px;
-		color: @text;
-		.transition;
-	}//a
+#main-nav ul {
+	li {
+		display: table;
+		height: 150px;
+		width: 90px;
+		z-index: 10;
+		text-align: center;
 
-	.sub-menu {
+		a {
+			display: table-cell !important;
+			color: @text;
+			.transition;
+			vertical-align: middle;
+		}//a
+
+
+		&:hover {
+			background-color: @darkgray;
+			.transition;
+			a {	color: @white; }
+		}
+	}//li
+	
+	ul {
 		a {
 			background-color: @darkgray;
 			color: @white;
 			
 			&:hover {background-color: @gray;}
 		}//a
+
+		li {
+			width: 120%;
+			height: initial;
+		}
 	}//.sub-menu
-
-	&:hover {
-		background-color: @darkgray;
-		.transition;
-		a {	color: @white; }
-	}
-}//#main-nav ul li
-
+}//#main-nav ul
+#main-nav-menu {padding: 0;}
 @import "dropdown_menu.less"; // Use this Dropdown Menu to save time
 
 

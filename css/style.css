@@ -6249,19 +6249,17 @@ blockquote {
   display: block;
 }
 #main-nav ul li {
+  display: table;
+  height: 150px;
+  width: 90px;
   z-index: 10;
+  text-align: center;
 }
 #main-nav ul li a {
-  padding: 60px 20px 70px;
+  display: table-cell !important;
   color: #333333;
   transition: .2s;
-}
-#main-nav ul li .sub-menu a {
-  background-color: #545454;
-  color: #ffffff;
-}
-#main-nav ul li .sub-menu a:hover {
-  background-color: #919191;
+  vertical-align: middle;
 }
 #main-nav ul li:hover {
   background-color: #545454;
@@ -6269,6 +6267,20 @@ blockquote {
 }
 #main-nav ul li:hover a {
   color: #ffffff;
+}
+#main-nav ul ul a {
+  background-color: #545454;
+  color: #ffffff;
+}
+#main-nav ul ul a:hover {
+  background-color: #919191;
+}
+#main-nav ul ul li {
+  width: 120%;
+  height: initial;
+}
+#main-nav-menu {
+  padding: 0;
 }
 #main-nav ul {
   margin: 0px;
