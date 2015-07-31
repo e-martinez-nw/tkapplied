@@ -6127,22 +6127,22 @@ h6 {
   color: #f4a435;
 }
 h1 {
-  font-size: 28px;
+  font-size: 32px;
 }
 h2 {
-  font-size: 24px;
+  font-size: 26px;
 }
 h3 {
   font-size: 22px;
 }
 h4 {
-  font-size: 22px;
+  font-size: 18px;
 }
 h5 {
-  font-size: 20px;
+  font-size: 15px;
 }
 h6 {
-  font-size: 18px;
+  font-size: 12px;
 }
 img {
   vertical-align: top;
@@ -6251,12 +6251,12 @@ blockquote {
 #main-nav ul li {
   display: table;
   height: 150px;
-  width: 90px;
+  width: 110px;
   z-index: 10;
   text-align: center;
 }
 #main-nav ul li a {
-  display: table-cell !important;
+  display: table-cell;
   color: #333333;
   transition: .2s;
   vertical-align: middle;
@@ -6293,7 +6293,7 @@ blockquote {
   list-style-type: none;
 }
 #main-nav ul li a {
-  display: inline-block;
+  display: table-cell;
 }
 #main-nav ul li a:hover {
   text-decoration: none;
@@ -6303,6 +6303,12 @@ blockquote {
 }
 #main-nav ul li:hover > ul {
   display: block;
+}
+#main-nav ul li:hover > ul a {
+  color: #333;
+}
+#main-nav ul li:hover > ul a:hover {
+  color: #ffffff;
 }
 #main-nav ul ul {
   padding: 0px;
@@ -6900,6 +6906,11 @@ blockquote {
 }
 /* Large devices (large desktops, 1200px and up) */
 /* Midum devices only (desktops, from 992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #main-nav ul li {
+    width: 98px;
+  }
+}
 /* Medium devices and up (desktops, 992px and up) */
 /* Small devices only (tablets, from 768px to 992px) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -6908,6 +6919,9 @@ blockquote {
   }
   #somos h2 {
     padding: 0;
+  }
+  #main-nav ul li {
+    width: 69px;
   }
 }
 /* Small devices and up (tablets, 768px and up) */
@@ -6927,15 +6941,23 @@ blockquote {
     padding: 0;
   }
   #main-nav ul li {
+    height: auto;
     width: 100%;
   }
   #main-nav ul li a {
     display: block;
   }
-  #main-nav ul li > ul {
+  #main-nav ul li ul {
     min-width: 100%;
     position: relative;
     display: block;
+  }
+  #main-nav ul li ul li a {
+    background-color: #ffffff;
+    color: #333;
+  }
+  #main-nav ul li ul li a:hover {
+    background-color: #545454;
   }
   .carousel-slide {
     height: 180px;

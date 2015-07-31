@@ -34,17 +34,7 @@
 </head>
 <body>
 
-	<?php 
-	/*
-	*
-	* El css que genera el "En Construcción" está salvado en el archivo .less
-	* únicamente comenta la línea o elimínala para quitar el display en construcción
-	*
-	* Elimina éste comentario y ya estás listo 
-	* Happy Developing!
-	*
-	*/
-	?>
+
 
 	<header id="main-header">
 		<nav class="navbar" role="navigation">

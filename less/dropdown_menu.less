@@ -57,14 +57,24 @@
 			list-style-type: none; 
 
 			a{ 
-				display: inline-block; 
+				display: table-cell; 
 				
 				&:hover{
 					text-decoration: none;
 				}
 			}
 			&:hover {  position: relative; 
-				>ul{ display: block;}
+				>ul{ 
+					display: block;
+
+					a {
+						color: #333;
+
+						&:hover {
+							color: @white;
+						}
+					}
+				}
 			}
 		}
 		ul{

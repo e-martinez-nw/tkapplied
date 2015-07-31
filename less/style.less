@@ -80,12 +80,12 @@ body{ font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6{ font-family: @primaryFontFamily; font-weight: 300; color: @orange;}
-h1 {font-size: 28px;}
-h2 {font-size: 24px;}
+h1 {font-size: 32px;}
+h2 {font-size: 26px;}
 h3 {font-size: 22px;}
-h4 {font-size: 22px;}
-h5 {font-size: 20px;}
-h6 {font-size: 18px;}
+h4 {font-size: 18px;}
+h5 {font-size: 15px;}
+h6 {font-size: 12px;}
 
 img{ vertical-align: top; } // Remove 2 pixels under the image
 
@@ -207,12 +207,12 @@ blockquote{
 	li {
 		display: table;
 		height: 150px;
-		width: 90px;
+		width: 110px;
 		z-index: 10;
 		text-align: center;
 
 		a {
-			display: table-cell !important;
+			display: table-cell;
 			color: @text;
 			.transition;
 			vertical-align: middle;
@@ -896,7 +896,11 @@ blockquote{
 @media (min-width: @screen-lg-min) { }// Large devices
 
 /* Midum devices only (desktops, from 992px to 1200px) */
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { }// Midum devices only
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	#main-nav ul li {
+		width: 98px;
+	}
+}// Midum devices only
 
 /* Medium devices and up (desktops, 992px and up) */
 @media (min-width: @screen-md-min) { }// Midum devices and up
@@ -907,6 +911,7 @@ blockquote{
 		padding: 50px 0;
 		h2 {padding: 0;}
 	}
+	#main-nav ul li {width: 69px;}
  }// Small devices only
 
 /* Small devices and up (tablets, 768px and up) */
@@ -925,16 +930,28 @@ blockquote{
 	#main-nav{
 		ul{ width: 100%; padding: 0;
 			li{
+				height: auto;
 				width: 100%;
 				a{
 					display: block;
 					&:hover{ }
 				}
 
-				>ul{
+				ul{
 					min-width: 100%;
 					position: relative;
 					display: block;
+
+					li {
+						a {
+							background-color: @white;
+							color: #333;
+
+							&:hover {
+								background-color: #545454;
+							}
+						}
+					}
 				}
 			}// li
 		}// ul
